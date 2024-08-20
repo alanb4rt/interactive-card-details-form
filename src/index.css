@@ -2,14 +2,62 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("./assets/fonts/SpaceGrotesk.ttf");
+  font-display: fallback;
+}
+
 :root {
-  font-family: Inter, sans-serif;
+  font-family: "Space Grotesk", sans-serif;
   line-height: 1.5;
-  font-weight: 400;
+  font-weight: 500;
+  font-size: 1rem;
+
+  --active-input-border-from: hsl(249 99% 64%);
+  --active-input-border-to: hsl(278 94% 30%);
+  --input-error: hsl(0 100% 66%);
+  --white: hsl(0, 0%, 100%);
+  --light-grayish-violet: hsl(270 3% 87%);
+  --dark-grayish-violet: hsl(279 6% 55%);
+  --very-dark-violet: hsl(278 68 11%);
+
+  background: var(--white);
 }
 
 body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
+
+  background: url("./assets/images/bg-main-desktop.png");
+  background-position: left;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-size: 14px;
+}
+
+form label {
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
+form input {
+  border: 1px solid var(--light-grayish-violet);
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+}
+
+form button {
+  background: var(--very-dark-violet);
+  color: var(--white);
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  margin-top: 1rem;
 }
