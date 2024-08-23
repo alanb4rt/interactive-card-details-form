@@ -53,9 +53,21 @@ form label {
 }
 
 form input {
-  border: 1px solid var(--light-grayish-violet);
+  border: 1px solid;
+  border-color: var(--light-grayish-violet);
   border-radius: 4px;
   padding: 0.5rem 1rem;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button,
+input[type="number"] {
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
+}
+
+form .error-input {
+  border-color: red;
 }
 
 button {
@@ -66,4 +78,9 @@ button {
   border-radius: 8px;
   margin-top: 1rem;
   font-size: 1rem;
+}
+
+.error-message {
+  color: red;
+  font-size: 0.875rem;
 }

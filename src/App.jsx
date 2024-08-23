@@ -23,13 +23,15 @@ export default function App() {
           <section className="w-full h-full flex flex-col justify-center items-center">
             <div className="w-full max-w-xs">
               {!isFormCompleted ? (
-                <Form handleFormDataChange={handleFormDataChange} />
+                <Form
+                  handleFormDataChange={handleFormDataChange}
+                  toggleFormCompletion={toggleFormCompletion}
+                />
               ) : (
-                <PostSubmissionConfirmation />
+                <PostSubmissionConfirmation
+                  toggleFormCompletion={toggleFormCompletion}
+                />
               )}
-              <button onClick={toggleFormCompletion}>
-                toggle (remove later)
-              </button>
             </div>
           </section>
         </div>
