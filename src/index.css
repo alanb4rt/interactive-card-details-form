@@ -40,6 +40,11 @@ body {
   background-repeat: no-repeat;
 }
 
+.card {
+  position: relative;
+  width: 26rem;
+}
+
 form {
   display: flex;
   flex-direction: column;
@@ -83,4 +88,22 @@ button {
 .error-message {
   color: red;
   font-size: 0.875rem;
+}
+
+@media screen and (width < 1024px) {
+  .card {
+    width: 22rem;
+  }
+}
+
+@media screen and (width < 768px) {
+  body {
+    background-image: url("./assets/images/bg-main-mobile.png");
+    background-position: top;
+    background-size: 100% 33%;
+  }
+
+  .card {
+    width: 17rem;
+  }
 }

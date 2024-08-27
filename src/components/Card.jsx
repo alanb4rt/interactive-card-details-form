@@ -25,17 +25,17 @@ export default function Card(props) {
 
   return (
     <>
-      <section className="flex flex-col gap-8 justify-between uppercase text-white tracking-[0.2em]">
-        <div className="relative w-3/4">
+      <section className="flex flex-col-reverse gap-0 justify-between self-start uppercase text-white tracking-widest md:flex-col md:gap-8">
+        <div className="card z-10 -mt-16 md:mt-0">
           <img
             className="w-full"
             src="./src/assets/images/bg-card-front.png"
             alt="Front card"
           />
-          <div className="absolute inset-0 px-8 py-6 flex flex-col justify-between">
-            <img className="w-16" src={CardLogo} alt="Card logo" />
-            <div className="flex flex-col gap-4">
-              <span className="text-2xl">{cardData.number}</span>
+          <div className="absolute inset-0 p-4 flex flex-col justify-between md:p-6">
+            <img className="w-12 md:w-16" src={CardLogo} alt="Card logo" />
+            <div className="flex flex-col gap-4 md:gap-6">
+              <span className="text-base md:text-2xl">{cardData.number}</span>
               <div className="flex justify-between items-end text-xs">
                 <span>{cardData.fullName}</span>
                 <span>
@@ -45,13 +45,13 @@ export default function Card(props) {
             </div>
           </div>
         </div>
-        <div className="relative w-3/4 self-end">
+        <div className="card self-end">
           <img
             className="w-full"
             src="./src/assets/images/bg-card-back.png"
             alt="Back card"
           />
-          <div className="absolute inset-y-0 bottom-2 right-0 h-fit px-16 my-auto">
+          <div className="absolute top-[3.75rem] right-8 h-fit md:top-20 md:right-10 lg:top-24 lg:right-12">
             <span className="text-xs">{cardData.cvc}</span>
           </div>
         </div>

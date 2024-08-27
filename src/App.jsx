@@ -17,11 +17,11 @@ export default function App() {
 
   return (
     <>
-      <div className="container mx-auto min-h-screen flex flex-col justify-center">
-        <div className="grid grid-cols-2 items-center gap-16">
+      <div className="container mx-auto px-4 py-8 min-h-screen flex flex-col justify-center md:px-12">
+        <div className="grid grid-cols-1 items-center gap-16 md:grid-cols-2">
           <Card formData={formData} />
           <section className="w-full h-full flex flex-col justify-center items-center">
-            <div className="w-full max-w-xs">
+            <div className="w-full p-2 md:p-0 md:max-w-xs">
               {!isFormCompleted ? (
                 <Form
                   handleFormDataChange={handleFormDataChange}
