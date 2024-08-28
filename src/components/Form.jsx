@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import FormInput from "./FormInput";
+import useStoredFormData from "../hooks/useSavedFormData";
 
 export default function Form(props) {
   const { handleFormDataChange, toggleFormCompletion } = props;
@@ -15,13 +16,9 @@ export default function Form(props) {
   const [inputValues, setInputValues] = useState({ ...initialInputValue });
   const [errorInputs, setErrorInputs] = useState({});
 
-  useEffect(() => {
-    const savedFormData = sessionStorage.getItem("formData");
-    if (savedFormData) {
-      const parsedFormData = JSON.parse(savedFormData);
-      setInputValues(parsedFormData);
-    }
-  }, []);
+  useStoredFormData((parsedFormData) => {
+    setInputValues(parsedFormData);
+  });
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -74,7 +71,7 @@ export default function Form(props) {
     setErrorInputs(newErrorInputs);
 
     if (Object.values(newErrorInputs).every((error) => error === "")) {
-      sessionStorage.setItem("formData", JSON.stringify(inputValues));
+      localStorage.setItem("formData", JSON.stringify(inputValues));
       toggleFormCompletion();
     }
   };

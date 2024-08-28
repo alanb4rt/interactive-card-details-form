@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import CardLogo from "../assets/images/card-logo.svg";
 import { getImageURL } from "../utils/getImageURL";
+import useStoredFormData from "../hooks/useSavedFormData";
 
 export default function Card(props) {
   const { formData } = props;
@@ -14,6 +15,10 @@ export default function Card(props) {
   };
 
   const [cardData, setCardData] = useState({ ...initialCardData });
+
+  useStoredFormData((parsedFormData) => {
+    setCardData(parsedFormData);
+  });
 
   useEffect(() => {
     Object.keys(formData).forEach((key) => {
