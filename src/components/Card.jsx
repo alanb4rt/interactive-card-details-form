@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import CardLogo from "../assets/images/card-logo.svg";
+import { getImageURL } from "../utils/getImageURL";
 
 export default function Card(props) {
   const { formData } = props;
@@ -29,7 +30,7 @@ export default function Card(props) {
         <div className="card z-10 -mt-16 md:mt-0">
           <img
             className="w-full"
-            src="./src/assets/images/bg-card-front.png"
+            src={getImageURL("bg-card-front.png")}
             alt="Front card"
           />
           <div className="absolute inset-0 p-4 flex flex-col justify-between md:p-6">
@@ -48,7 +49,7 @@ export default function Card(props) {
         <div className="card self-end">
           <img
             className="w-full"
-            src="./src/assets/images/bg-card-back.png"
+            src={getImageURL("bg-card-back.png")}
             alt="Back card"
           />
           <div className="absolute top-[3.75rem] right-8 h-fit md:top-20 md:right-10 lg:top-24 lg:right-12">
