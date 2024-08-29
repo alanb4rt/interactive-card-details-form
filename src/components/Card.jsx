@@ -42,7 +42,7 @@ export default function Card(props) {
           <div className="absolute inset-0 p-4 flex flex-col justify-between md:p-6">
             <img className="w-12 md:w-16" src={CardLogo} alt="Card logo" />
             <div className="flex flex-col gap-4 md:gap-6">
-              <span className="text-base md:text-3xl">
+              <span className="text-base md:text-2xl">
                 {getFormatCardNumber(cardData.number)}
               </span>
               <div className="flex justify-between items-end text-xs">
@@ -60,7 +60,7 @@ export default function Card(props) {
             src={getImageURL("bg-card-back.png")}
             alt="Back card"
           />
-          <div className="absolute top-[3.75rem] right-8 h-fit md:top-20 md:right-10 lg:top-24 lg:right-12">
+          <div className="absolute top-[3.75rem] right-8 h-fit md:top-20 md:right-10 lg:top-[6.5rem] lg:right-12">
             <span className="text-xs">{cardData.cvc}</span>
           </div>
         </div>

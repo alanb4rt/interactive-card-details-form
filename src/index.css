@@ -42,7 +42,9 @@ body {
 
 .card {
   position: relative;
-  width: 26rem;
+  width: 28rem;
+  border-radius: 0.5rem;
+  box-shadow: 0rem 1.5rem 2rem hsla(0, 0%, 16%, 0.1);
 }
 
 form {
@@ -55,6 +57,7 @@ form {
 form label {
   text-transform: uppercase;
   letter-spacing: 4px;
+  font-size: 12px;
 }
 
 form input {

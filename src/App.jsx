@@ -21,7 +21,7 @@ export default function App() {
         <div className="grid grid-cols-1 items-center gap-16 md:grid-cols-2">
           <Card formData={formData} />
           <section className="w-full h-full flex flex-col justify-center items-center">
-            <div className="w-full p-2 md:p-0 md:max-w-xs">
+            <div className="w-full p-2 md:p-0 md:max-w-sm">
               {!isFormCompleted ? (
                 <Form
                   handleFormDataChange={handleFormDataChange}
