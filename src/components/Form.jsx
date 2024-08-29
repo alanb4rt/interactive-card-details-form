@@ -1,6 +1,7 @@
 import { useState } from "react";
 import FormInput from "./FormInput";
 import useStoredFormData from "../hooks/useSavedFormData";
+import { getFormatCardNumber } from "../utils/getFormatCardNumber";
 
 export default function Form(props) {
   const { handleFormDataChange, toggleFormCompletion } = props;
@@ -56,7 +57,12 @@ export default function Form(props) {
     const newErrorInputs = {};
 
     Object.keys(inputValues).forEach((key) => {
-      const value = inputValues[key];
+      let value = inputValues[key];
+
+      if (key !== "fullName") {
+        value = Number(value.split(" ").join(""));
+      }
+
       const { regex, errorMessage } = validationRules[key];
 
       if (value === "") {
@@ -90,10 +96,11 @@ export default function Form(props) {
         />
         <FormInput
           label="Card Number"
-          type="number"
+          type="text"
+          inputMode="numeric"
           name="number"
           placeholder="e.g. 1234 5678 9123 0000"
-          value={inputValues.number}
+          value={getFormatCardNumber(inputValues.number)}
           onChange={handleInputChange}
           error={errorInputs.number}
         />

@@ -1,5 +1,6 @@
 export default function FormInput(props) {
-  const { label, type, name, placeholder, value, onChange, error } = props;
+  const { label, type, inputMode, name, placeholder, value, onChange, error } =
+    props;
 
   return (
     <>
@@ -8,6 +9,7 @@ export default function FormInput(props) {
         <input
           className={error ? "error-input" : ""}
           type={type}
+          inputMode={inputMode}
           name={name}
           id={name}
           placeholder={placeholder}

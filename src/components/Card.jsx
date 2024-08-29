@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import CardLogo from "../assets/images/card-logo.svg";
-import { getImageURL } from "../utils/getImageURL";
 import useStoredFormData from "../hooks/useSavedFormData";
+import { getImageURL } from "../utils/getImageURL";
+import { getFormatCardNumber } from "../utils/getFormatCardNumber";
 
 export default function Card(props) {
   const { formData } = props;
@@ -41,7 +42,9 @@ export default function Card(props) {
           <div className="absolute inset-0 p-4 flex flex-col justify-between md:p-6">
             <img className="w-12 md:w-16" src={CardLogo} alt="Card logo" />
             <div className="flex flex-col gap-4 md:gap-6">
-              <span className="text-base md:text-2xl">{cardData.number}</span>
+              <span className="text-base md:text-2xl">
+                {getFormatCardNumber(cardData.number)}
+              </span>
               <div className="flex justify-between items-end text-xs">
                 <span>{cardData.fullName}</span>
                 <span>
