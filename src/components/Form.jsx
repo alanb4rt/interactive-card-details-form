@@ -105,36 +105,50 @@ export default function Form(props) {
           error={errorInputs.number}
         />
         <div className="grid grid-cols-2 gap-4">
-          <div className="flex flex-col gap-1">
-            <label>Exp. Date</label>
+          <fieldset className="flex flex-col gap-1">
+            <legend className="mb-1">Exp. Date</legend>
             <div className="grid grid-cols-2 gap-2">
-              <input
-                className={errorInputs.expMonth ? "error-input" : ""}
-                type="number"
-                name="expMonth"
-                id="expMonth"
-                placeholder="MM"
-                value={inputValues.expMonth}
-                onChange={handleInputChange}
-                required
-              />
-              <input
-                className={errorInputs.expYear ? "error-input" : ""}
-                type="number"
-                name="expYear"
-                id="expYear"
-                placeholder="YY"
-                value={inputValues.expYear}
-                onChange={handleInputChange}
-                required
-              />
+              <div className="w-full">
+                <label className="sr-only" htmlFor="expMonth">
+                  ExpMonth
+                </label>
+                <input
+                  className={`w-full ${
+                    errorInputs.expMonth ? "error-input" : ""
+                  }`}
+                  type="number"
+                  name="expMonth"
+                  id="expMonth"
+                  placeholder="MM"
+                  value={inputValues.expMonth}
+                  onChange={handleInputChange}
+                  required
+                />
+              </div>
+              <div className="w-full">
+                <label className="sr-only" htmlFor="expYear">
+                  ExpYear
+                </label>
+                <input
+                  className={`w-full ${
+                    errorInputs.expYear ? "error-input" : ""
+                  }`}
+                  type="number"
+                  name="expYear"
+                  id="expYear"
+                  placeholder="YY"
+                  value={inputValues.expYear}
+                  onChange={handleInputChange}
+                  required
+                />
+              </div>
             </div>
             {(errorInputs.expMonth || errorInputs.expYear) && (
               <span className="error-message">
                 {errorInputs.expMonth || errorInputs.expYear}
               </span>
             )}
-          </div>
+          </fieldset>
           <FormInput
             label="CVC"
             type="number"

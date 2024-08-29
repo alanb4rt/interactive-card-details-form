@@ -42,7 +42,7 @@ export default function Card(props) {
           <div className="absolute inset-0 p-4 flex flex-col justify-between md:p-6">
             <img className="w-12 md:w-16" src={CardLogo} alt="Card logo" />
             <div className="flex flex-col gap-4 md:gap-6">
-              <span className="text-base md:text-2xl">
+              <span className="text-base md:text-3xl">
                 {getFormatCardNumber(cardData.number)}
               </span>
               <div className="flex justify-between items-end text-xs">
